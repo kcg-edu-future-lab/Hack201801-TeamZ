@@ -1,15 +1,12 @@
 <template lang="pug">
   b-container.Nekonote
     h1 body
-    img(:src="require('../assets/icon.png')")
-    img(:src="require('../assets/icon.png')")
-    img(:src="require('../assets/icon.png')")
-    img(:src="require('../assets/icon.png')")
-    img(:src="require('../assets/icon.png')")
-    img(:src="require('../assets/icon.png')")
-    p {{result}}
-    input(v-model="query")
-    b-button(@click="getData") test
+    b-input-group
+      p {{result}}
+      input(v-model="query")
+      b-button(@click="getData") test
+      b-button(@click="sendPinch" variant="warning") Pinch Test
+      b-button(@click="sendBored" variant="primary") Bored Test
 </template>
 
 <script>
@@ -19,7 +16,7 @@ const {ACTION} = NEKONOTE
 
 export default {
   name: 'Nekonote',
-  data () {
+  data() {
     return {
       query: '',
       result: ''
@@ -29,8 +26,34 @@ export default {
     getData: function () {
       this.$store.dispatch(ACTION.GET_DATA, this.query)
         .then(e => {
+          console.log(e.data)
           this.result = `response: ${e.data}`
         })
+    },
+    sendPinch: function () {
+      this.$socket.emit('sPinch', '田辺')
+    },
+    sendBored: function () {
+      this.$socket.emit('sBored', '田辺')
+    }
+  },
+  sockets: {
+    connect: function () {
+      console.log('connected')
+    },
+    rPinch: function (user) {
+      this.$notify({
+        title: 'やばい',
+        message: `${user} がやばい！！！！！`,
+        type: 'warning'
+      })
+    },
+    rBored: function (user) {
+      this.$notify({
+        title: '暇',
+        message: `${user} 暇です`,
+        type: 'info'
+      })
     }
   }
 }

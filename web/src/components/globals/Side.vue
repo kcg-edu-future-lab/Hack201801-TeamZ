@@ -2,15 +2,28 @@
   div.side
     h1 Side
     ul
-      li(v-for="user in Array.from([...Array(20)].keys()).map(e => 'user')") {{user}}
+      li(v-for="user in users")
+        div
+          img(:src="require('../../assets/icon.png')" style="width: 30px; margin-right: 5px")
+          span {{Object.values(user).join('')}}
 </template>
 
 <script>
+import {NEKONOTE} from '../../vuex/types'
+
+const {ACTION} = NEKONOTE
 export default {
   name: 'side',
-  data () {
+  data() {
     return {
+      users: []
     }
+  },
+  created: function () {
+    this.$store.dispatch(ACTION.GET_DATA, this.query)
+      .then(e => {
+        this.users = e.data
+      })
   },
   methods: {
   }

@@ -1,13 +1,14 @@
 <template lang="pug">
-  div#id
-    el-container
-      el-aside
-        side
-      el-container
-        el-header
-          header-bar
-        el-main
-          router-view
+  div#app
+    b-container
+      el-container(style="height: 700px")
+        el-aside
+          side
+        el-container
+          el-header
+            header-bar
+          el-main
+            router-view
 </template>
 
 <script>
@@ -21,6 +22,10 @@ export default {
 </script>
 
 <style lang="sass">
+html
+  background-color: #343434
+  body
+    background-color: #343434
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased

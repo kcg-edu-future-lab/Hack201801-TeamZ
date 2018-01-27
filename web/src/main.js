@@ -10,12 +10,16 @@ import router from './router'
 import bootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import socket from 'vue-socket.io'
+import ToggleButton from 'vue-js-toggle-button'
 
 Vue.config.productionTip = false
 
 Vue.use(Element, {locale})
 Vue.use(bootstrapVue)
 Vue.use(Vuex)
+Vue.use(socket, 'http://localhost:9000')
+Vue.use(ToggleButton)
 
 const store = require('./vuex/store').default
 

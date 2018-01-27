@@ -1,12 +1,24 @@
 import {NEKONOTE} from '../types'
 import axios from 'axios'
 
-const {ACTION} = NEKONOTE
+const {ACTION, MUTATION} = NEKONOTE
 
 export const nekonote = {
-  state: {},
-  getters: {},
-  mutations: {},
+  state: {
+    status: false,
+    user: '',
+    users: []
+  },
+  getters: {
+    status: (state) => state.status,
+    user: (state) => state.user,
+    users: (state) => state.users
+  },
+  mutations: {
+    [MUTATION.TOGGLE_STATUS]: (state) => {
+      state.status = !state.status
+    }
+  },
   actions: {
     [ACTION.GET_DATA]: ({commit, state, dispatch}, payload) => {
       return new Promise((resolve, reject) => {
