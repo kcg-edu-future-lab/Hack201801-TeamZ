@@ -1,12 +1,13 @@
 <template lang="pug">
   el-card(draggable="true").task
-    p task
-    p 22:00 ~ 24:00
+    p {{title}}
+    p {{date}}
 </template>
 
 <script>
 export default {
   name: 'task',
+  props: ['title', 'date'],
   data() {
     return {
       name: ''
@@ -18,4 +19,6 @@ export default {
 <style lang="sass" scoped>
 .task
   width: 200px
+  p
+    font-size: 0.8em
 </style>

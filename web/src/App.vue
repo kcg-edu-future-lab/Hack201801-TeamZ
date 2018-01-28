@@ -10,14 +10,24 @@
       b-col(:sm="3").task
         nekonote(val="task3")
       b-col(:sm="3").task
-        nekonote(val="task4")
-    div(style="border: 1px solid light-gray; position: flex")
-      task
+        el-container
+          el-header
+           h3 task4
+        el-main
+          ul#list
+            li(style="list-style: none")
+              task(title="プロジェクトA" date="2018-1-28 15:40")
+              task(title="会議" date="2018-1-28 15:40")
+        el-footer
+          el-button(@click="addTask" icon="el-icon-circle-plus" style="border: none")
+    div
+      task(title="カメラ" date="")
+      task(title="会議室" date="")
     modal(name="task")
       b-form(@submit="onSubmit" style="margin: 20px")
         el-select(v-model="value" placeholder="Select")
-          el-option(v-for="item in options" v-bind:key="item.value" v-bind:label="item.label" v-bind:value="item.value")
-        b-form-group
+           el-option(v-for="item in options" v-bind:key="item.value" v-bind:label="item.label" v-bind:value="item.value")
+        b-form-group(description="日付")
           b-form-input(v-model="form.input")
         toggle-button(toggle-button :value="form.neko" v-bind:labels="{checked: 'ねこの手', unchecked: 'no'}" style="width: 80px")
         el-button(@click="onSubmit" icon="el-ico -circle-plus" style="border: none") 追加
@@ -63,9 +73,13 @@ export default {
   methods: {
     onSubmit: function (ev) {
       ev.preventDefault()
-      axios.post('http://', {
-        title: this.value,
-        date: this.form.input1
+      this.$modal.hide('task')
+      axios.post('http://192.168.100.110/hackathon/insert.php', {
+        tableName: 'schedule',
+        sdate: this.form.input1,
+        edate: this.form.input1,
+        number: this.value,
+        free: this.form.neko
       })
     },
     addTask: function () {
@@ -74,7 +88,7 @@ export default {
     yabai: function () {
       this.$notify({
         title: `やばい！`,
-        text: `田辺 さんがやばい！！！！`,
+        message: `田辺 さんがやばい！！！！`,
         type: 'warning',
         duration: 4000,
         speed: 1500

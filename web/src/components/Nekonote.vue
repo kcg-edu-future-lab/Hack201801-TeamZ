@@ -5,7 +5,7 @@
     el-main
       ul
         li
-          task
+          task(title="task" date="2018-1-28 ~ 2018-2-20")
     el-footer
       el-button(@click="addTask" icon="el-icon-circle-plus" style="border: none")
 </template>
