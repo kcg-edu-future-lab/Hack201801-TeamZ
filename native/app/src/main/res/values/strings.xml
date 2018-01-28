@@ -3,4 +3,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="server_key">key=AAAAxCqd7UU:APA91bH91BULddr7wo_4tYsQMRtmWwavC_TgR6jOZcoJ8JY1-hW2gHVAuw7ZqTIoFScfmQbHWSIVQfkWX0YL8GYWdD0f4bGLnMbSoWM75eV0VTA7it9gNd92Wz2040Kijcs7qBd_ZdU1</string>
 </resources>

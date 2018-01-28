@@ -16,7 +16,6 @@ class MainActivity : FutureBaseAppCompatActivity(), MainContract {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 //        if (MySharedPreferences.getActiveAppLogin()!!) {
 //            MySharedPreferences.setFirstAppLaunch(true)
 //            Log.d("isLogin", MySharedPreferences.getActiveAppLogin().toString())

@@ -17,6 +17,7 @@ import com.gumio_inf.futurelabhackathonapp.R
  * create an instance of this fragment.
  */
 class HomeFragment : FutureBaseFragment() {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }

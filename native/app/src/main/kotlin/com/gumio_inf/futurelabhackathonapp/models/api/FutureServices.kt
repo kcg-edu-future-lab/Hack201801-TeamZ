@@ -2,6 +2,7 @@ package com.gumio_inf.futurelabhackathonapp.models.api
 
 import com.gumio_inf.futurelabhackathonapp.models.entity.User
 import io.reactivex.Observable
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -14,5 +15,5 @@ interface FutureServices {
     fun getUser(@Path("username") user: String): Observable<User>
 
     @POST("fcm/send")
-    fun sendEmergency()
+    fun sendEmergency(@Body body: HashMap<String, String>): Observable<Void>
 }
