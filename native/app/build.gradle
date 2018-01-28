@@ -56,6 +56,8 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.3.1'
     // アニメ
     compile 'com.github.florent37:viewanimator:1.0.5'
+    // FB
+    compile "com.google.firebase:firebase-messaging:11.0.4"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -65,3 +67,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

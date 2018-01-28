@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "842528582981",
+    "firebase_url": "https://futurelabhackathonapp.firebaseio.com",
+    "project_id": "futurelabhackathonapp",
+    "storage_bucket": "futurelabhackathonapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842528582981:android:b93552d436791997",
+        "android_client_info": {
+          "package_name": "com.gumio_inf.futurelabhackathonapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842528582981-u63u1m9irvmebp2d6gsb0f9sghkilihf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtypLhebs_p_hMMj4qvy3SNwQtPymCA_Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
