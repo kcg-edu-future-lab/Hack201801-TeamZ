@@ -6,10 +6,12 @@ const {ACTION, MUTATION} = NEKONOTE
 export const nekonote = {
   state: {
     status: false,
+    tasks: [{task1: [{title: 'title', date: 'day'}]}, {task2: [{title: 'title', date: 'date'}]}, {task2: [{title: 'title', date: 'date'}]}],
     user: '',
     users: []
   },
   getters: {
+    tasks: (state) => state.tasks,
     status: (state) => state.status,
     user: (state) => state.user,
     users: (state) => state.users
@@ -17,6 +19,9 @@ export const nekonote = {
   mutations: {
     [MUTATION.TOGGLE_STATUS]: (state) => {
       state.status = !state.status
+    },
+    [MUTATION.ADD_TASK]: (state, payload) => {
+      state.tasks.push(payload)
     }
   },
   actions: {

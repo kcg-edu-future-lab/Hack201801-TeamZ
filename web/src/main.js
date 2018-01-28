@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import socket from 'vue-socket.io'
 import ToggleButton from 'vue-js-toggle-button'
+import VModal from 'vue-js-modal'
 
 Vue.config.productionTip = false
 
@@ -20,6 +21,7 @@ Vue.use(bootstrapVue)
 Vue.use(Vuex)
 Vue.use(socket, 'http://localhost:9000')
 Vue.use(ToggleButton)
+Vue.use(VModal)
 
 const store = require('./vuex/store').default
 

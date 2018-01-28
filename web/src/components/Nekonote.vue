@@ -1,26 +1,29 @@
 <template lang="pug">
-  b-container.Nekonote
-    h1 body
-    b-input-group
-      p {{result}}
-      input(v-model="query")
-      b-button(@click="getData") test
-      b-button(@click="sendPinch" variant="warning") Pinch Test
-      b-button(@click="sendBored" variant="primary") Bored Test
+  el-container
+    el-header
+      h3 {{title}}
+    el-main
+      ul
+        li
+          task
+    el-footer
+      el-button(@click="addTask" icon="el-icon-circle-plus" style="border: none")
 </template>
 
 <script>
 import {NEKONOTE} from '../vuex/types'
-// コミュニケーション
-// 備品と連動
+import ElFooter from 'element-ui/packages/footer/src/main'
+import Task from './Task'
+
 const {ACTION} = NEKONOTE
 
 export default {
+  components: {ElFooter, Task},
+  props: ['val'],
   name: 'Nekonote',
   data() {
     return {
-      query: '',
-      result: ''
+      title: this.val
     }
   },
   methods: {
@@ -31,30 +34,8 @@ export default {
           this.result = `response: ${e.data}`
         })
     },
-    sendPinch: function () {
-      this.$socket.emit('sPinch', '田辺')
-    },
-    sendBored: function () {
-      this.$socket.emit('sBored', '田辺')
-    }
-  },
-  sockets: {
-    connect: function () {
-      console.log('connected')
-    },
-    rPinch: function (user) {
-      this.$notify({
-        title: 'やばい',
-        message: `${user} がやばい！！！！！`,
-        type: 'warning'
-      })
-    },
-    rBored: function (user) {
-      this.$notify({
-        title: '暇',
-        message: `${user} 暇です`,
-        type: 'info'
-      })
+    addTask: function () {
+      this.$modal.show('task', {title: this.title})
     }
   }
 }
@@ -62,4 +43,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
+ul
+  padding: 0
+li
+  list-style: none
 </style>
