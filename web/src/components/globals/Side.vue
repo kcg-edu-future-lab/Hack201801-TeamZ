@@ -1,11 +1,19 @@
 <template lang="pug">
   div.side
     h1 Side
-    ul
-      li(v-for="user in users")
-        div
-          img(:src="require('../../assets/icon.png')" style="width: 30px; margin-right: 5px")
-          span {{Object.values(user).join('')}}
+    el-collapse(v-model="activeName" accordion v-on:change="activeNameChanged")
+      el-collapse-item(title="タイトル" name="1")
+        ul
+          li(v-for="user in users")
+            div
+              img(:src="require('../../assets/icon.png')" style="width: 30px; margin-right: 5px")
+              span {{Object.values(user).join('')}}
+      el-collapse-item(title="タイトル2" name="2")
+        ul
+          li(v-for="user in users")
+            div
+              img(:src="require('../../assets/icon.png')" style="width: 30px; margin-right: 5px")
+              span {{Object.values(user).join('')}}
 </template>
 
 <script>
@@ -16,7 +24,8 @@ export default {
   name: 'side',
   data() {
     return {
-      users: []
+      users: [],
+      activeName: ''
     }
   },
   created: function () {
@@ -26,6 +35,9 @@ export default {
       })
   },
   methods: {
+    activeNameChanged: function () {
+      console.log(this.activeName)
+    }
   }
 }
 </script>

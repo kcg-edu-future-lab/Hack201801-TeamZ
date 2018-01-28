@@ -11,7 +11,8 @@
 
 <script>
 import {NEKONOTE} from '../vuex/types'
-
+// コミュニケーション
+// 備品と連動
 const {ACTION} = NEKONOTE
 
 export default {

@@ -8,10 +8,11 @@ const io = require('socket.io')(server, {
     cookie: false
 })
 
-server.listen(9000, 'localhost')
+server.listen(9000, '')
 
 io.on('connection', (socket) => {
     console.log(`${socket.id} has connected`)
+    io.emit('sock')
 
     socket.on('sPinch', (user) => {
         // socket.broadcast.emit('rPinch', user)
