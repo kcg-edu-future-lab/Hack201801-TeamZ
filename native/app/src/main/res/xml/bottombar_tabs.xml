@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_yabai"
+        icon="@drawable/ic_android"
+        title="ヤバイ" />
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_android"
+        title="ホーム" />
+    <tab
+        id="@+id/tab_nekonote"
+        icon="@drawable/ic_android"
+        title="猫の手" />
+</tabs>
