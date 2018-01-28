@@ -2,6 +2,7 @@ package com.gumio_inf.futurelabhackathonapp.views.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import com.google.firebase.messaging.FirebaseMessaging
 import com.gumio_inf.futurelabhackathonapp.R
 import com.gumio_inf.futurelabhackathonapp.contracts.MainContract
 import com.gumio_inf.futurelabhackathonapp.databinding.ActivityMainBinding
@@ -25,6 +26,8 @@ class MainActivity : FutureBaseAppCompatActivity(), MainContract {
 //            Log.d("isFirstLaunch", MySharedPreferences.getFirstAppLaunch().toString())
 //            setupViews()
 //        }
+        //Push通知の購読開始
+        FirebaseMessaging.getInstance().subscribeToTopic("yabai");
         setupViews()
     }
 

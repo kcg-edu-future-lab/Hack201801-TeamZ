@@ -57,6 +57,7 @@ dependencies {
     // アニメ
     compile 'com.github.florent37:viewanimator:1.0.5'
     // FB
+    compile 'com.google.firebase:firebase-core:11.0.4'
     compile "com.google.firebase:firebase-messaging:11.0.4"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
