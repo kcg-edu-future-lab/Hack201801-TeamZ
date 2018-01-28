@@ -6,6 +6,6 @@
         android:layout_height="match_parent"
         android:background="#0f4973"
         tools:context=".views.fragment.YabaiFragment" >
-        
+
     </RelativeLayout>
 </layout>

@@ -1,11 +1,13 @@
 package com.gumio_inf.futurelabhackathonapp.views.fragment
 
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.gumio_inf.futurelabhackathonapp.R
+import com.gumio_inf.futurelabhackathonapp.databinding.FragmentYabaiBinding
 
 
 /**
@@ -18,8 +20,11 @@ import com.gumio_inf.futurelabhackathonapp.R
  */
 class YabaiFragment : FutureBaseFragment() {
 
+    private var mBinding: FragmentYabaiBinding? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_yabai, container, false)
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_yabai, container, false)
+        return mBinding?.root!!
     }
 }
 

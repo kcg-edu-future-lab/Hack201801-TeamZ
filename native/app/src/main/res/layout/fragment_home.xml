@@ -4,14 +4,49 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff42"
+        android:padding="16dp"
         tools:context=".views.fragment.HomeFragment">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="やばい" />
 
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_holo_light"
+            android:layout_margin="36dp"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/task_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/task"
+                android:spinnerMode="dialog" />
+
+            <EditText
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="日付" />
+
+            <EditText
+                android:id="@+id/details_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="予定" />
+
+            <CheckBox
+                android:id="@+id/yabai_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_marginLeft="170dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="追加"/>
+        </LinearLayout>
     </RelativeLayout>
 </layout>
